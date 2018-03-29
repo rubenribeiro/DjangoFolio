@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!doctype html>
 <html lang="en">
 
@@ -6,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
+    
 
-    <title>Album example for Bootstrap</title>
+    <title>DjangoFolio</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -18,16 +20,16 @@
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">DjangoFolio</a>
+            <a class="navbar-brand" href="{% url 'home' %}">DjangoFolio</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="#">Twitter</a>
-                    <a class="nav-item nav-link" href="#">Resume</a>
-                    <a class="nav-item nav-link" href="#">Blog</a>
+                    <a class="nav-item nav-link" href="http://twitter.com">Twitter</a>
+                    <a class="nav-item nav-link" href="{% static 'Resume.pdf' %}">Resume</a>
+                    <a class="nav-item nav-link" href="{% url 'allblogs'%}">Blog</a>
                 </div>
             </div>
         </nav>
@@ -43,6 +45,7 @@
                 <p>
                     <a href="mailto:youremail@yoursite.com" class="btn btn-primary my-2">Email Me</a>
                 </p>
+                <img src="{% static 'johndoe.png' %}" />
             </div>
         </section>
 
